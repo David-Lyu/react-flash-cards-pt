@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   addCard(card) {
     const cards = this.state.cards.concat(card);
-    this.setState({ cards }, this.saveCards());
+    this.setState({ cards }, this.saveCards);
   }
 
   saveCards() {
