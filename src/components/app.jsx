@@ -4,6 +4,7 @@ import CreateCard from './create-card';
 import ReviewCards from './review-cards';
 import Nav from './nav';
 
+const FlashCards = React.createContext([]);
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +13,8 @@ export default class App extends React.Component {
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
     this.state = {
-      view: 'create-card',
-      cards: []
+      view: 'view-cards',
+      cards: [{ question: 'what?', answer: 'no' }, { question: 'huh?', answer: 'yes' }]
     };
   }
 
@@ -38,7 +39,7 @@ export default class App extends React.Component {
       case 'review-cards':
         return <ReviewCards />;
       case 'view-cards':
-        return <ViewCards />;
+        return <ViewCards cards={this.state.cards}/>;
       default:
         return null;
     }
