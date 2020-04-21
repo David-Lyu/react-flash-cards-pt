@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CardsContext } from './app';
 
 export default class ViewCards extends React.Component {
   constructor(props) {
     super(props);
-    this.cardsArray = this.props.cards;
-    this.setState = {};
+    this.cards = this.props.cards;
+    this.state = {
+      key: 0
+    };
   }
 
   makeCards() {
-    const flashCards = this.cardsArray.map((card, index) => {
+    const flashCards = this.cards.map((card, index) => {
       return (
         <div key={index} className="col-4">
           <div className="card mb-3">

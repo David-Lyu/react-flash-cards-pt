@@ -4,7 +4,6 @@ import CreateCard from './create-card';
 import ReviewCards from './review-cards';
 import Nav from './nav';
 
-const FlashCards = React.createContext([]);
 export default class App extends React.Component {
   constructor(props) {
     super(props);
