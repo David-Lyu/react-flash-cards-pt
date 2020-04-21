@@ -10,14 +10,16 @@ export default class ViewCards extends React.Component {
   makeCards() {
     const flashCards = this.cardsArray.map((card, index) => {
       return (
-        <div key={index}>
-          <div>
-            <h6>Question:</h6>
-            <div>{card.question}</div>
-          </div>
-          <div>
-            <h6>Answers:</h6>
-            {card.answer}
+        <div key={index} className="col-4">
+          <div className="card mb-3">
+            <div className="bg-dark card-body">
+              <h5 className="card-title text-muted">Question:</h5>
+              <p className="card-text text-white">A: {card.question}</p>
+            </div>
+            <div className=" bg-secondary card-body">
+              <h5 className="card-title text-mute">Answers:</h5>
+              <p className="card-text text-white">A: {card.answer}</p>
+            </div>
           </div>
         </div>
       );
@@ -29,7 +31,11 @@ export default class ViewCards extends React.Component {
     return (
       <>
         <h1 className="text-center">My Cards</h1>
-        {this.makeCards()}
+        <div className="container">
+          <div className="row">
+            {this.makeCards()}
+          </div>
+        </div>
       </>
     );
   }
