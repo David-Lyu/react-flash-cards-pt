@@ -13,13 +13,7 @@ export default class App extends React.Component {
     this.addCard = this.addCard.bind(this);
     this.state = {
       view: 'view-cards',
-      cards: [
-        { question: 'what?', answer: 'no' },
-        { question: 'huh?', answer: 'yes' },
-        { question: 'huh?', answer: 'yes' },
-        { question: 'huh?', answer: 'yes' },
-        { question: 'huh?', answer: 'yes' }
-      ]
+      cards: []
     };
   }
 

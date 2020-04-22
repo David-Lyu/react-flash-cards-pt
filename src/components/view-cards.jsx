@@ -5,15 +5,13 @@ export default class ViewCards extends React.Component {
   constructor(props) {
     super(props);
     this.cards = this.props.cards;
-    this.state = {
-      key: 0
-    };
   }
 
   makeCards() {
-    const flashCards = this.cards.map((card, index) => {
+    const flashCards = this.cards.map(card => {
+      console.log(card);
       return (
-        <div key={index} className="col-4">
+        <div key={card.id} className="col-4">
           <div className="card mb-3">
             <div className="bg-dark card-body">
               <h5 className="card-title text-muted">Question:</h5>
