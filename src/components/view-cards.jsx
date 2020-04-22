@@ -9,7 +9,6 @@ export default class ViewCards extends React.Component {
 
   makeCards() {
     const flashCards = this.cards.map(card => {
-      console.log(card);
       return (
         <div key={card.id} className="col-4">
           <div className="card mb-3">
