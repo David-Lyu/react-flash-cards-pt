@@ -9,7 +9,8 @@ export default class CreateCard extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.state = {
       questionInput: '',
-      answerInput: ''
+      answerInput: '',
+      id: 0
     };
   }
 
@@ -23,12 +24,14 @@ export default class CreateCard extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const id = this.state.id;
     const newCard = {
       question: this.state.questionInput,
-      answer: this.state.answerInput
+      answer: this.state.answerInput,
+      id: this.state.id
     };
     this.props.addCard(newCard);
-    this.setState({ questionInput: '', answerInput: '' });
+    this.setState({ questionInput: '', answerInput: '', id: id + 1 });
   }
 
   handleCancel() {

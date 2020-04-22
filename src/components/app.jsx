@@ -12,7 +12,7 @@ export default class App extends React.Component {
     this.saveCards = this.saveCards.bind(this);
     this.addCard = this.addCard.bind(this);
     this.state = {
-      view: 'create-card',
+      view: 'view-cards',
       cards: []
     };
   }
@@ -38,7 +38,7 @@ export default class App extends React.Component {
       case 'review-cards':
         return <ReviewCards />;
       case 'view-cards':
-        return <ViewCards />;
+        return <ViewCards cards={this.state.cards}/>;
       default:
         return null;
     }
